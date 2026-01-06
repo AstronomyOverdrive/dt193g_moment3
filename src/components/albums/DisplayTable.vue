@@ -6,7 +6,7 @@
   let tableData = ref();
 
   // Make API request
-  async function makeRequest(url: string, extra: {method: string, body?: string}): void {
+  async function makeRequest(url: string, extra: {method: string, headers?: {contentType: string}, body?: string}): void {
     try {
       const response = await fetch(url, extra);
       if (response.status === 200) {

@@ -6,15 +6,15 @@
   // Setup ref for child <-> child communication
   const tableRef = ref();
   // Make request via DisplayTable from AddForm
-  async function updateTable() {
-    await tableRef.value.makeRequest("http://127.0.0.1:8000/albums", {method: "GET"});
+  async function newAlbum(album: string): void {
+	await tableRef.value.makeRequest("http://127.0.0.1:8000/albums", {method: "POST", headers: {"Content-Type": "application/json"}, body: album});
   }
 </script>
 
 <template>
   <h2>Album</h2>
+  <AddForm @newAlbum="newAlbum"/>
   <DisplayTable ref="tableRef"/>
-  <AddForm @updateTable="updateTable"/>
 </template>
 
 <style scoped></style>
