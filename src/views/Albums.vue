@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <h2>Album</h2>
+  <h2 class="text-3xl m-5 text-center">Album</h2>
   <AddForm @newAlbum="newAlbum"/>
   <DisplayTable ref="tableRef"/>
 </template>
