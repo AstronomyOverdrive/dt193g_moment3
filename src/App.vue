@@ -6,7 +6,7 @@
 
 <template>
   <Header/>
-  <main>
+  <main class="h-full">
     <RouterView/>
   </main>
   <Footer/>
