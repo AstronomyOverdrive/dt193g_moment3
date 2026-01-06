@@ -30,6 +30,9 @@
     await makeRequest(`http://127.0.0.1:8000/albums/${id}`, {method: "DELETE"});
   }
 
+  // Expose makeRequest function to parent element
+  defineExpose({ makeRequest })
+
   // Make API request on component mount
   onMounted(async () => {
     await makeRequest("http://127.0.0.1:8000/albums", {method: "GET"});
