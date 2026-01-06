@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import DisplayTable from "../components/albums/DisplayTable.vue";
+</script>
 
 <template>
-  <h1>Albums.vue</h1>
+  <h2>Album</h2>
+  <DisplayTable/>
 </template>
 
 <style scoped></style>
