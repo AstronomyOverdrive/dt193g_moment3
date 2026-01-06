@@ -40,14 +40,14 @@
 </script>
 
 <template>
-  <table>
-    <thead>
+  <table class="table-fixed w-full bg-neutral-200 text-left">
+    <thead class="bg-sky-200">
       <tr>
-        <th>Artist</th>
-        <th>Album</th>
-        <th>Minuter</th>
-        <th>Typ</th>
-        <th>Ta bort</th>
+        <th class="py-[10px] px-[5px] text-center">Artist</th>
+        <th class="py-[10px] px-[5px] text-center">Album</th>
+        <th class="py-[10px] px-[5px] text-center">Minuter</th>
+        <th class="py-[10px] px-[5px] text-center">Typ</th>
+        <th class="py-[10px] px-[5px] text-center">Ta bort</th>
       </tr>
     </thead>
     <tbody>

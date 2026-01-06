@@ -18,12 +18,12 @@
 </script>
 
 <template>
-  <tr>
-    <td>{{ artist }}</td>
-    <td>{{ title }}</td>
-    <td>{{ playtime }}</td>
-    <td>{{ singleToText(isSingle) }}</td>
-    <td><button @click="$emit('removeAlbum', id)">Ta bort</button></td>
+  <tr class="row border-y-1 border-gray-400 hover:bg-gray-300">
+    <td class="col py-[10px] px-[5px] text-center">{{ artist }}</td>
+    <td class="col py-[10px] px-[5px] text-center">{{ title }}</td>
+    <td class="col py-[10px] px-[5px] text-center">{{ playtime }}</td>
+    <td class="col py-[10px] px-[5px] text-center">{{ singleToText(isSingle) }}</td>
+    <td class="col py-[10px] px-[5px] text-center"><button @click="$emit('removeAlbum', id)" class="text-red-600 cursor-pointer underline">Ta bort</button></td>
   </tr>
 </template>
 
