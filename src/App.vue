@@ -6,7 +6,7 @@
 
 <template>
   <Header/>
-  <main class="h-full">
+  <main class="h-full w-100/100 md:w-80/100 lg:w-70/100 mx-auto">
     <RouterView/>
   </main>
   <Footer/>
