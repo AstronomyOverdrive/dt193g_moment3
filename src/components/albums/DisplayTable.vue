@@ -6,24 +6,33 @@
   let tableData = ref();
 
   // Make API request
-  async function makeRequest(url: string) {
+  async function makeRequest(url: string, extra: {method: string, body?: string}): void {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, extra);
       if (response.status === 200) {
         const responseData = await response.json();
         // Update ref
-        tableData.value = responseData.albums;
+        if (extra.method === "GET") {
+          tableData.value = responseData.albums;
+        } else {
+          await makeRequest("http://127.0.0.1:8000/albums", {method: "GET"});
+        }
       } else {
-        alert("Fel vid databas inläsning");
+        alert("Fel vid databas operation");
       }
     } catch (error) {
-      alert("Fel vid databas inläsning");
+      alert("Fel vid databas anslutning");
     }
+  }
+
+  // Remove item from db
+  async function removeAlbum(id: string) {
+    await makeRequest(`http://127.0.0.1:8000/albums/${id}`, {method: "DELETE"});
   }
 
   // Make API request on component mount
   onMounted(async () => {
-    await makeRequest("http://127.0.0.1:8000/albums");
+    await makeRequest("http://127.0.0.1:8000/albums", {method: "GET"});
   });
 </script>
 
@@ -35,6 +44,7 @@
         <th>Album</th>
         <th>Minuter</th>
         <th>Typ</th>
+        <th>Ta bort</th>
       </tr>
     </thead>
     <tbody>
@@ -44,6 +54,8 @@
         :title="album.name"
         :playtime="album.playtime"
         :isSingle="album.single"
+        :id="album._id"
+        v-on:removeAlbum="removeAlbum"
       />
     </tbody>
   </table>

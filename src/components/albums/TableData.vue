@@ -3,7 +3,8 @@
     artist: String,
     title: String,
     playtime: Number,
-    isSingle: Boolean
+    isSingle: Boolean,
+    id: String
   });
 
   // Convert boolean to text
@@ -22,6 +23,7 @@
     <td>{{ title }}</td>
     <td>{{ playtime }}</td>
     <td>{{ singleToText(isSingle) }}</td>
+    <td><button @click="$emit('removeAlbum', id)">Ta bort</button></td>
   </tr>
 </template>
 
