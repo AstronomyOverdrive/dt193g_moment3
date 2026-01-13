@@ -1,6 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import Banner from "../media/banner.webp";
+</script>
 
 <template>
+  <img :src="Banner" alt="" class="w-full h-45 my-5 object-cover">
   <h2 class="text-3xl m-5 text-center">Laboration 3</h2>
   <p class="text-1xl lg:text-2xl max-w-8/10 md:max-w-9/10 lg:max-w-6/10 mx-auto my-2">
     Musik generellt är något som har väldigt stor betydelse för mig och jag
